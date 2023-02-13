@@ -1,0 +1,623 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: "Courier New", Courier, monospace;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+a:active,
+a:hover {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  min-height: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 0.8em;
+  position: fixed;
+  z-index: 5;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+header .logo .shape {
+  background-color: black;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.89;
+  font-size: 1em;
+}
+
+header .logo .shape .u1 {
+  position: absolute;
+  top: 2em;
+  left: 4.5em;
+  color: white;
+}
+header .logo .shape .u2 {
+  position: absolute;
+  top: 4em;
+  left: 2.7em;
+  color: white;
+}
+header .logo .shape .i {
+  position: absolute;
+  top: 0.5em;
+  left: 2.7em;
+  color: white;
+}
+header .logo .shape .x {
+  position: absolute;
+  top: 2em;
+  left: 1em;
+  color: white;
+}
+header .logo .shape .line1 {
+  width: 0.01em;
+  background-color: white;
+  height: 5em;
+  position: absolute;
+  left: 3em;
+  top: 0.5em;
+  transform: rotate(35deg);
+}
+header .logo .shape .line2 {
+  width: 0.01em;
+  background-color: white;
+  height: 5em;
+  position: absolute;
+  left: 3em;
+  top: 0.5em;
+  transform: rotate(-35deg);
+}
+header .logo .wooster {
+  font-size: 2em;
+  margin-left: 0.5em;
+  font-weight: 100;
+}
+header .nav {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 24em;
+}
+header .nav ul {
+  transition: 0.5s;
+  transform: translateX(200%);
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1em;
+}
+header .nav .menu {
+  display: flex;
+  flex-direction: column;
+}
+header .nav ul li {
+  margin-left: 1em;
+  padding: 0.4em;
+}
+header .nav ul li:hover {
+  background-color: #f5f5f5;
+}
+header .nav .menu span {
+  width: 2em;
+  height: 0.2em;
+  background-color: black;
+  margin-bottom: 3px;
+}
+.landing {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/header.jpg");
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.landing p {
+  font-size: 1.5em;
+  font-weight: 200;
+}
+.landing span {
+  width: 6em;
+  height: 0.1em;
+  background-color: black;
+}
+.landing h2 {
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 1.5;
+}
+.landing button {
+  background-color: transparent;
+  padding: 1.5em 2em;
+  transition: 0.3s;
+}
+.landing button:hover {
+  background-color: black;
+  color: white;
+}
+.download-Part {
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8em;
+  padding: 4em;
+}
+.download-Part h3 {
+  font-size: 1.8em;
+}
+.download-Part button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 1em;
+}
+
+.history-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 0 10em;
+}
+.history-part .left {
+  display: flex;
+  flex-direction: column;
+}
+.history-part .left h1 {
+}
+.history-part .left p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0.8;
+}
+.history-part .left span {
+  width: 4em;
+  height: 0.1em;
+  background-color: black;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.history-part .left button {
+  padding: 1em 2em;
+  width: fit-content;
+  background-color: transparent;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.history-part .left button:hover {
+  background-color: black;
+  color: white;
+}
+.video-part {
+  background-color: aqua;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+}
+.video-part img {
+  max-height: 100%;
+  width: 100%;
+}
+.video-part::after {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.video-part div {
+  text-align: center;
+  position: absolute;
+  top: 30vh;
+  left: 40%;
+  color: white;
+  z-index: 1;
+  font-size: 3em;
+  padding: 0.2em;
+}
+.video-part div:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.portfolio {
+  width: 100%;
+  padding: 9em;
+  text-align: center;
+}
+.portfolio h3 {
+  font-size: 2em;
+}
+.portfolio p {
+  font-size: 1em;
+  line-height: 1.7;
+}
+.portfolio span {
+  width: 13em;
+  height: 0.01em;
+  display: inline-block;
+  background-color: black;
+  margin: 1em 0;
+  margin-bottom: 3em;
+}
+.portfolio ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
+}
+.portfolio ul li {
+  margin-left: 3em;
+  border: 1px solid black;
+  padding: 0.8em 1em;
+}
+.portfolio ul .active {
+  background-color: black;
+  color: white;
+}
+.portfolio ul li a:hover {
+  color: unset;
+}
+.portfolio ul li:hover {
+  background-color: black;
+  color: white;
+}
+.quot {
+  margin: 5em 0 0 0;
+  background-image: url("../img/coffe.jpg");
+  height: 40vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-color: red;
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+  text-align: center;
+}
+.layout {
+  z-index: 1;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+.quot .text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 3;
+  color: white;
+}
+.quot .text .icon {
+  background-color: white;
+  width: fit-content;
+  color: black;
+  margin-left: calc(50% - 1em);
+  width: 2em;
+  padding-top: 0.5em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+.quot .text p {
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+.quot .text span {
+  margin-top: 1.8em;
+  font-size: 0.8em;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2em;
+  font-weight: 300;
+}
+.about p {
+  font-size: 1em;
+  opacity: 0.8;
+}
+.about span {
+  display: inline-block;
+  width: 8em;
+  height: 0.01em;
+  background-color: black;
+  margin: 1em 0 2em 0;
+}
+.about .stuf {
+  margin-top: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  padding: 0 10em;
+}
+.about .stuf .card {
+  position: relative;
+}
+.about .stuf .card img {
+  max-width: 100%;
+  height: 27em;
+}
+.about .stuf .card p {
+  position: absolute;
+  bottom: -0.7em;
+  width: 100%;
+  padding: 1.5em;
+  color: white;
+  background-color: black;
+}
+.about .about-text {
+  display: flex;
+  text-align: start;
+  padding: 2em 10em;
+}
+.about .about-text .part1 {
+  margin-left: 1em;
+}
+@media (max-width: 776px) {
+  .download-Part {
+    flex-direction: column;
+    gap: 2em;
+  }
+  .history-part,
+  .stuf {
+    flex-direction: column;
+  }
+
+  .video-part {
+    display: none;
+  }
+  .landing {
+    width: 100%;
+  }
+  .portfolio ul li {
+    margin-left: 0.3em;
+  }
+}
+.subscribe {
+  background-color: black;
+  height: 15em;
+  width: 100%;
+  display: flex;
+  text-align: start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.subscribe div {
+  display: flex;
+  flex-direction: column;
+}
+.subscribe h3 {
+  font-size: 1.8em;
+  color: white;
+  font-weight: bold;
+}
+.subscribe form {
+  display: flex;
+  gap: 2em;
+}
+.subscribe form input[type="email"] {
+  border: 1px solid white;
+  color: white;
+  width: 35em;
+  height: 4em;
+  background-color: transparent;
+  text-align: start;
+}
+.subscribe form input[type="email"]::placeholder {
+  padding: 1em;
+}
+.subscribe form input[type="submit"] {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1em 5em;
+  letter-spacing: 1.8px;
+}
+.subscribe form input[type="submit"]:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.contact {
+  text-align: center;
+  padding: 5em;
+}
+.contact h3 {
+  font-size: 3em;
+  font-weight: 100;
+}
+.contact p {
+  font-size: 1em;
+}
+.contact span {
+  background-color: black;
+  display: inline-block;
+  width: 8em;
+  height: 0.01em;
+  margin: 0.5em 5em;
+}
+.contact .contact-method {
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+  gap: 25em;
+  margin-bottom: 5em;
+}
+.contact .contact-method .elm1 {
+  background-color: black;
+  color: white;
+  border-radius: 50px 0 50px 0;
+  padding: 2em;
+  transition: 0.3s;
+}
+.contact .contact-method .elm1:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 0px 50px 0px 50px;
+}
+.contact .contact-method .elm1 p {
+  font-size: 1.5em;
+}
+.contact .contact-method .elm1 h3 {
+  font-size: 1.9em;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact form div {
+  display: flex;
+  gap: 2em;
+}
+.contact form div .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact form div .left input {
+  height: 4em;
+  width: 55em;
+  padding: 1em;
+}
+.contact form div .right textarea {
+  resize: none;
+  padding: 1em;
+  width: 28em;
+}
+.contact form input[type="submit"] {
+  margin-top: 2em;
+  padding: 1em 3em;
+  background-color: black;
+  color: white;
+  letter-spacing: 1.7px;
+  margin-left: 76em;
+  transition: 0.3s;
+}
+.contact form input[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
+footer {
+  background-color: black;
+  height: 25em;
+  padding: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 2em;
+}
+footer .shape {
+  background-color: white;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  position: relative;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+footer .shape .u1 {
+  position: absolute;
+  top: 2em;
+  left: 4.5em;
+  color: black;
+}
+footer .shape .u2 {
+  position: absolute;
+  top: 4em;
+  left: 2.7em;
+  color: black;
+}
+footer .shape .i {
+  position: absolute;
+  top: 0.5em;
+  left: 2.7em;
+  color: black;
+}
+footer .shape .x {
+  position: absolute;
+  top: 2em;
+  left: 1em;
+  color: black;
+}
+footer .shape .line1 {
+  width: 0.01em;
+  background-color: black;
+  height: 5em;
+  position: absolute;
+  left: 3em;
+  top: 0.5em;
+  transform: rotate(35deg);
+}
+footer .shape .line2 {
+  width: 0.01em;
+  background-color: black;
+  height: 5em;
+  position: absolute;
+  left: 3em;
+  top: 0.5em;
+  transform: rotate(-35deg);
+}
+.links span {
+  margin-left: 2em;
+  padding: 1em;
+  transition: 0.3s;
+}
+.links span:hover {
+  background-color: white;
+  color: black;
+}
